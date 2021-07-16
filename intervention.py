@@ -2,12 +2,11 @@ import webbrowser, os, time, sys
 import colorama
 from colorama import init, Fore, Style
 import ctypes
-init(convert=True)
 def logo():
     if os.name == "nt":
         ctypes.windll.kernel32.SetConsoleTitleW('Intervention | Coded by: vx#1234 | github.com/vx-dev')
+        os.system('cls')    
     os.system('clear')
-    os.system('cls')
     print(Fore.CYAN + """
   _____ _   _ _______ ______ _______      ________ _   _ _______ _____ ____  _   _ 
  |_   _| \ | |__   __|  ____|  __ \ \    / /  ____| \ | |__   __|_   _/ __ \| \ | |
@@ -22,6 +21,14 @@ def logo():
                                                                                                                                 
 
 def menu():
+    anon = 'anonfile.com+'
+    driv = 'drive.google.com+'
+    medi = 'mediafire.com+'
+    zipp = 'zippyshare.com+'
+    past = 'pastebin.com+'
+    inurl = 'inurl:'
+    site = 'site:'
+    o = '+OR+'
     logo()
     print("""
     [1] Anonfile
@@ -32,48 +39,33 @@ def menu():
     """)
     mode = input('Service: ')
     if mode == '1':
-        anonfile()
+        logo()        
+        key = input('Enter your keyword: ')
+        webbrowser.open('https://google.com/search?q='+inurl+anon+key+o+site+anon+key)
+        menu()
     elif mode == '2':
-        drive()
+        logo()
+        key = input('Enter your keyword: ')
+        webbrowser.open('https://google.com/search?q='+inurl+driv+key)
+        menu()
     elif mode == '3':
-        mediafire()
+        logo()
+        key = input('Enter your keyword: ')
+        webbrowser.open('https://google.com/search?q='+inurl+medi+key)
+        menu()
     elif mode == '4':
-        zippyshare()
+        logo()
+        key = input('Enter your keyword: ')
+        webbrowser.open('https://google.com/search?q='+inurl+zipp+key)
+        menu()
+
     elif mode == '5':
-        pastebin()
+        logo()
+        key = input('Enter your keyword')
+        webbrowser.open('https://google.com/search?q='+inurl+past+key)
+        menu()
     else:
         print("Invalid Option!")
         time.sleep(1000)
         menu()
-
-def anonfile():
-    logo()
-    key = input('Enter your keyword(s): ')
-    webbrowser.open('https://google.com/search?q=inurl:anonfile.com+' + key)
-    menu()
-
-def drive():
-    logo()
-    key = input('Enter your keyword(s): ')
-    webbrowser.open('https://google.com/search?q=inurl:drive.google.com+' + key)
-    menu()
-
-def mediafire():
-    logo()
-    key = input('Enter your keyword(s): ')
-    webbrowser.open('https://google.com/search?q=inurl:mediafire.com+' + key)
-    menu()
-
-def zippyshare():
-    logo()
-    key = input('Enter your keyword(s): ')
-    webbrowser.open('https://google.com/search?q=inurl:zippyshare.com+' + key)
-    menu()
-
-def pastebin():
-    logo()
-    key = input('Enter your keyword(s)')
-    webbrowser.open('https://google.com/search?q=inurl:pastebin.com+' + key)
-    menu()
-
 menu()
