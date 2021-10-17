@@ -95,7 +95,7 @@ def bing():
     logo()
     print("""
     [1] Anonfile
-    [2] bing Drive
+    [2] Google Drive
     [3] Mediafire
     [4] Zippyshare
     [5] Pastebin
